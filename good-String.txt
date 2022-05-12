@@ -1,0 +1,22 @@
+Good String
+
+Problem @hackerEarth=https://www.hackerearth.com/practice/basic-programming/implementation/basics-of-implementation/practice-problems/algorithm/good-string-3/
+Problem_Summary = number of characters that should be removed to make the string unique
+Eg = (input) aabc (output) 1
+Solution @python
+
+def main():
+    s = input()
+    count = 0
+    while len(s) > 0:
+        a = s.replace(s[0],'')
+        count += len(s) - len(a) -1
+        s = a
+    print(count)
+
+if __name__ == '__main__':
+    main()
+    
+    *
+    
+Create a new string where you would replace all the occurances of the first character ( Including itself) with '', and add the difference of length of original and new string to the count after subtracting 1 from it ( as to exclude single occurance of that character). Repeat this process until length of the string doesn't becomes zero.
